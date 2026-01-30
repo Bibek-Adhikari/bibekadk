@@ -98,7 +98,7 @@ export const HomeScreen = () => {
                     <Text style={styles.totalAmount}>{currency}{totalSpent.toFixed(2)}</Text>
                 </View>
                 <TouchableOpacity style={styles.iconButton}>
-                    <Ionicons name="search" size={24} color={COLORS.text} />
+                    <Text style={styles.filterText}>Track Expense</Text>
                 </TouchableOpacity>
             </View>
 
