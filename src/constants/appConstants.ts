@@ -1,14 +1,14 @@
-import { Category } from '../models/types';
+import { Category } from "../models/types";
 
 export const COLORS = {
-    primary: '#4F46E5', // Indigo 600
+    primary: '#4F46E5', // Indigo 600 (kept from the original as it works well on dark backgrounds)
     secondary: '#10B981', // Emerald 500
-    background: '#F9FAFB', // Gray 50
-    surface: '#FFFFFF',
-    text: '#1F2937', // Gray 800
-    textSecondary: '#6B7280', // Gray 500
-    border: '#E5E7EB', // Gray 200
-    danger: '#EF4444', // Red 500
+    background: '#141815ff', // Dark background for a dark theme
+    surface: '#1F2937', // Darker surface color for cards and sections
+    text: '#E5E7EB', // Light text color for readability on dark backgrounds
+    textSecondary: '#9CA3AF', // Lighter secondary text for less emphasis
+    border: '#374151', // Darker border color for better contrast on dark themes
+    danger: '#EF4444', // Red 500 for danger, should work well on dark
 };
 
 export const CATEGORIES: Category[] = [

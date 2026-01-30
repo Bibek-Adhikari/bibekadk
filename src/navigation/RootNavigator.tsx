@@ -30,8 +30,12 @@ function MainTabs() {
         <Tab.Navigator
             screenOptions={({ route }: { route: any }) => ({
                 headerShown: false,
-                tabBarActiveTintColor: COLORS.primary,
-                tabBarInactiveTintColor: 'gray',
+                tabBarActiveTintColor: COLORS.primary, // Primary color for active tab
+                tabBarInactiveTintColor: '#9CA3AF', // Lighter color for inactive tabs in dark mode
+                tabBarStyle: {
+                    backgroundColor: '#1F2937', // Dark background for the tab bar
+                    borderTopColor: '#374151', // Darker border to separate from the screen content
+                },
                 tabBarIcon: ({ focused, color, size }: { focused: boolean; color: string; size: number }) => {
                     let iconName: any;
 
@@ -64,7 +68,13 @@ export function RootNavigator() {
                 <Stack.Screen
                     name="AddExpense"
                     component={AddExpenseScreen}
-                    options={{ presentation: 'modal', headerShown: true, title: 'Add Expense' }}
+                    options={{
+                        presentation: 'modal',
+                        headerShown: true,
+                        title: 'Add Expense',
+                        headerStyle: { backgroundColor: '#1F2937' }, // Dark header background
+                        headerTintColor: '#E5E7EB', // Light text for header
+                    }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

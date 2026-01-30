@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "PlayMe",
-    "slug": "PlayMe",
+    "name": "Tracker",
+    "slug": "Tracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Natively",
+      "bundleIdentifier": "com.anonymous.Tracker",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.anonymous.Natively"
+      "package": "com.anonymous.Tracker"
     },
     "web": {
       "favicon": "./assets/images/final_quest_240x240.png",
@@ -33,6 +33,6 @@
     "plugins": [
       "expo-font"
     ],
-    "scheme": "natively"
+    "scheme": "tracker"
   }
 }
