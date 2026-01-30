@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { GestureHandlerRootView } from 'react-native-gesture-handler'; // Import added
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { AddExpenseScreen } from '../screens/AddExpenseScreen';
@@ -62,21 +63,23 @@ function MainTabs() {
 
 export function RootNavigator() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="MainTabs" component={MainTabs} />
-                <Stack.Screen
-                    name="AddExpense"
-                    component={AddExpenseScreen}
-                    options={{
-                        presentation: 'modal',
-                        headerShown: true,
-                        title: 'Add Expense',
-                        headerStyle: { backgroundColor: '#1F2937' }, // Dark header background
-                        headerTintColor: '#E5E7EB', // Light text for header
-                    }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <NavigationContainer>
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="MainTabs" component={MainTabs} />
+                    <Stack.Screen
+                        name="AddExpense"
+                        component={AddExpenseScreen}
+                        options={{
+                            presentation: 'modal',
+                            headerShown: true,
+                            title: 'Add Expense',
+                            headerStyle: { backgroundColor: '#1F2937' }, // Dark header background
+                            headerTintColor: '#E5E7EB', // Light text for header
+                        }}
+                    />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </GestureHandlerRootView>
     );
 }

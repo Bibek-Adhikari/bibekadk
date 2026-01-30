@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Tracker",
-    "slug": "Tracker",
+    "slug": "tracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -33,6 +33,12 @@
     "plugins": [
       "expo-font"
     ],
-    "scheme": "tracker"
+    "scheme": "tracker",
+    "extra": {
+      "eas": {
+        "projectId": "cd79e4b1-ebff-4066-ae1a-0db9dc0699ad"
+      }
+    },
+    "owner": "jammil"
   }
 }
