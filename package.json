@@ -7,7 +7,7 @@
     "android": "EXPO_NO_TELEMETRY=1 expo start --android",
     "ios": "EXPO_NO_TELEMETRY=1 expo start --ios",
     "web": "EXPO_NO_TELEMETRY=1 expo start --web",
-    "build:web": "expo export -p web && npx -y -p workbox-cli workbox generateSW workbox-config.js",
+    "build:web": "expo export -p web",
     "build:android": "expo prebuild -p android",
     "lint": "eslint .",
     "vercel-build": "expo export"
