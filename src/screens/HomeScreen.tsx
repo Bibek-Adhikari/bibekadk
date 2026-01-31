@@ -97,8 +97,11 @@ export const HomeScreen = () => {
                     <Text style={styles.greeting}>Total Spent</Text>
                     <Text style={styles.totalAmount}>{currency}{totalSpent.toFixed(2)}</Text>
                 </View>
+                <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Web')}>
+                    <Ionicons name="globe-outline" size={24} color={COLORS.text} />
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.iconButton}>
-                    <Text style={styles.filterText}>Track Expense</Text>
+                    <Text style={styles.filterText}>← Website</Text>
                 </TouchableOpacity>
             </View>
 

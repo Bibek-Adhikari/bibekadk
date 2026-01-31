@@ -9,12 +9,14 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { AddExpenseScreen } from '../screens/AddExpenseScreen';
 import { AnalyticsScreen } from '../screens/AnalyticsScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import { WebScreen } from '../screens/WebScreen';
 import { COLORS } from '../constants/appConstants';
 
 // Define Param Lists for Type Safety
 export type RootStackParamList = {
     MainTabs: undefined;
     AddExpense: { expenseId?: string }; // Optional ID for editing
+    Web: undefined;
 };
 
 export type MainTabParamList = {
@@ -76,6 +78,14 @@ export function RootNavigator() {
                             title: 'Add Expense',
                             headerStyle: { backgroundColor: '#1F2937' }, // Dark header background
                             headerTintColor: '#E5E7EB', // Light text for header
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Web"
+                        component={WebScreen}
+                        options={{
+                            presentation: 'card',
+                            headerShown: true,
                         }}
                     />
                 </Stack.Navigator>
