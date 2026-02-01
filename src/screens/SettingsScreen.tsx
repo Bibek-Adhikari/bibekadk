@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert, Share } from 'react-native';
-import { documentDirectory, writeAsStringAsync, readAsStringAsync } from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,12 +12,12 @@ export const SettingsScreen = () => { // Removed navigation prop
 
     const handleExport = async () => {
         try {
-            if (!documentDirectory) {
+            if (!FileSystem.documentDirectory) {
                 Alert.alert('Error', 'Storage not available');
                 return;
             }
-            const fileUri = documentDirectory + 'expenses.json';
-            await writeAsStringAsync(fileUri, JSON.stringify(expenses, null, 2));
+            const fileUri = FileSystem.documentDirectory + 'expenses.json';
+            await FileSystem.writeAsStringAsync(fileUri, JSON.stringify(expenses, null, 2));
 
             if (await Sharing.isAvailableAsync()) {
                 await Sharing.shareAsync(fileUri);
@@ -39,7 +39,7 @@ export const SettingsScreen = () => { // Removed navigation prop
             if (result.canceled || !result.assets || result.assets.length === 0) return;
 
             const fileUri = result.assets[0].uri;
-            const fileContent = await readAsStringAsync(fileUri);
+            const fileContent = await FileSystem.readAsStringAsync(fileUri);
 
             try {
                 const parsed = JSON.parse(fileContent);
